@@ -14,6 +14,14 @@ import MarketingMiniDiagram from "./icons/Marketing-mini-diagram.svg?react";
 import BlueArc from "./icons/blue-arc.svg?react";
 import PurpleArc from "./icons/purple-arc.svg?react";
 import GreenArc from "./icons/green-arc.svg?react";
+import ColorfulSolana from "./icons/Solana-colorful-icon.svg?react";
+import HugeWhiteTwitter from "./icons/Huge-white-twitter-icon.svg?react";
+import HugeWhiteDiscrod from "./icons/Huge-white-discord-icon.svg?react";
+import HugeWhiteTelegram from "./icons/Huge-telegram-icon.svg?react";
+import SmallGreyTwitter from "./icons/Small-grey-transparent-twitter.svg?react";
+import SmallGreyDiscord from "./icons/Small-grey-transparent-discord.svg?react";
+import SmallGreyTelegram from "./icons/Small-grey-telegram-icon.svg?react";
+import ScrollBack from "./icons/Scroll-back.svg?react";
 
 export const HomeEffects = new URL("./Entire-effects.png", import.meta.url)
   .href;
@@ -21,6 +29,14 @@ export const SmokingOrc = new URL("./Smoking-orc.png", import.meta.url).href;
 export const OrcWifFamily = new URL("./Orc-wif-family.png", import.meta.url)
   .href;
 export const OrcInShirt = new URL("./Orc-in-shirt.png", import.meta.url).href;
+
+export const SmorcWifFamily = new URL("./Smorc-wif-family.png", import.meta.url)
+  .href;
+
+export const AirdropBackground = new URL(
+  "./Airdrop-background.png",
+  import.meta.url,
+).href;
 
 export {
   Discord,
@@ -37,4 +53,12 @@ export {
   BlueArc,
   PurpleArc,
   GreenArc,
+  ColorfulSolana,
+  HugeWhiteTelegram,
+  HugeWhiteTwitter,
+  HugeWhiteDiscrod,
+  SmallGreyTelegram,
+  SmallGreyTwitter,
+  SmallGreyDiscord,
+  ScrollBack,
 };

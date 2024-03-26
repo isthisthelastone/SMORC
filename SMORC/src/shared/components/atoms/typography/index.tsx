@@ -1,19 +1,25 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import React from "react";
 
 type TypographyProps = {
   children: React.ReactNode;
   className?: string;
   special?: boolean;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
 export const Typography: React.FC<TypographyProps> = (
   props: TypographyProps,
 ) => {
-  const { className, children, special } = props;
+  const { className, children, special, onClick } = props;
 
   return (
-    <Paragraph special={special} className={`font-sans ${className ?? ""}`}>
+    <Paragraph
+      onClick={onClick}
+      special={special}
+      className={`font-sans ${className ?? ""}`}
+    >
       {children}
     </Paragraph>
   );

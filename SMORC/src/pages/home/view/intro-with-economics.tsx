@@ -27,13 +27,15 @@ export const IntroWithEconomics = () => {
 
 export const SmorcTheOrc = () => {
   return (
-    <Flex className={"pl-[12.5%] pr-[18.5%]"}>
+    <Flex className={"pr-[6.5%] max-h-[75vh]"}>
       <Box className="flex-1 gap-[10rem] pt-[2.5rem]" p={0}>
         <Flex className={"flex-col width-[25rem] gap-[1rem] pl-[1.5rem]"}>
           <Typography className={"text-[36px] font-[600]"}>
             SMORC, the ORC
           </Typography>
-          <Typography className={"text-[16px] font-[400]"}>
+          <Typography
+            className={"text-[16px] font-[400] max-h-[50vh] overflow-hidden"}
+          >
             In the digital realm of Solana, there lived SMORC, a curious
             character unlike any other blockchain entity. One day, it stumbled
             upon a glitch and embarked on a journey to uncover its secrets.
@@ -41,7 +43,9 @@ export const SmorcTheOrc = () => {
             eventually unearthed a treasure trove of artifacts hidden within the
             blockchain.
           </Typography>
-          <Typography className={"text-[16px] font-[400]"}>
+          <Typography
+            className={"text-[16px] font-[400] max-h-[50vh] overflow-hidden"}
+          >
             Excited by its discovery, SMORC shared it with the <b>Solana </b>
             community, sparking a frenzy of activity. Through collaboration and
             camaraderie, they celebrated not just the treasure, but the bonds
@@ -58,7 +62,7 @@ export const SmorcTheOrc = () => {
 
 export const SMORCenomics = () => {
   return (
-    <Flex className={"px-[12.5%] pt-[5rem] gap-[4rem] flex-col "}>
+    <Flex className={" pt-[5rem] gap-[4rem] flex-col"} id={"Smorcenomics"}>
       <Typography className="text-[56px] font-[700]">SMORCenomics</Typography>
       <Flex className=" gap-[4rem]">
         <Flex className="flex-col gap-[4rem]">

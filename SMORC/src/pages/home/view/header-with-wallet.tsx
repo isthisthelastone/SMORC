@@ -12,6 +12,7 @@ import { CopyIcon, OrcWifFamily, SmokingOrc, SolanaGrey } from "@shared/assets";
 import { Textarea } from "@shared/components/atoms/textarea";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
+import { nanoid } from "nanoid";
 
 export const HeaderWithWallet = () => {
   return (
@@ -34,7 +35,7 @@ const WalletContract = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <Flex className="gap-[10rem] px-[12.5%]">
+    <Flex className="gap-[10rem]">
       <Flex className="z-10 w-[30rem] pt-[10rem] flex-col gap-[1rem] text-6xl font-extrabold ">
         <Typography>$SMORC</Typography>
         <Typography>The strongest</Typography>
@@ -53,7 +54,7 @@ const WalletContract = () => {
             >
               Presale wallet contract
             </Typography>
-            <Flex className={"pt-[0.5rem]"}>
+            <Flex className={"pt-[0.5rem] pr-[1.75rem]"}>
               <SolanaGrey />
             </Flex>
           </Flex>
@@ -69,7 +70,7 @@ const WalletContract = () => {
               disabled
               ref={textAreaRef}
               readOnly
-              value={"123"}
+              value={nanoid().slice(0, 7)}
               className={`text-[18px] font-[600] pt-[0.7rem] max-h-[3rem]  cursor-pointer`}
               color={ADDITIONAL_MICROBOX}
             />
@@ -83,7 +84,7 @@ const WalletContract = () => {
 
 export const WhoIsSmorc = () => {
   return (
-    <Flex className={" pt-[8rem] gap-[10rem] px-[12.5%]"}>
+    <Flex id={"About"} className={" pt-[8rem] gap-[10rem] "}>
       <img src={OrcWifFamily} alt="Orc Wif Family" />
       <Flex className={"flex-col items-center pt-[7.5rem]"}>
         <Typography className={"text-[56px] pl-[3rem] font-[700]"}>

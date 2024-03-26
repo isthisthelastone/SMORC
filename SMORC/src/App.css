@@ -7,3 +7,39 @@ body {
   background-color: #080808;
   color: #FAFAFA;
 }
+/* Скрыть скроллбар для Chrome, Safari и Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Скрыть скроллбар для IE, Edge и Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/* Для Chrome, Safari и Opera */
+body::-webkit-scrollbar {
+  width: 12px; /* ширина скроллбара */
+}
+
+body::-webkit-scrollbar-track {
+  background: #333; /* цвет дорожки скроллбара */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000; /* цвет самого скроллбара */
+  border-radius: 6px; /* скругление углов */
+  border: 3px solid #333; /* граница вокруг скроллбара */
+}
+
+/* Для Firefox */
+body {
+  scrollbar-width: thin; /* "auto" или "thin" */
+  scrollbar-color: #000 #333; /* цвет скроллбара и дорожки */
+}
+
+/* Для IE и Edge */
+body {
+  -ms-overflow-style: none; /* Скрытие стандартного скроллбара в IE/Edge */
+}
+

@@ -20,7 +20,7 @@ export const Box = (props: BoxProps) => {
   const classes = `${padding} ${className || ""} ${cl}`.trim();
 
   return (
-    <FlexWithBorder>
+    <FlexWithBorder className={className}>
       <Flex className={classes}>{children}</Flex>
     </FlexWithBorder>
   );
