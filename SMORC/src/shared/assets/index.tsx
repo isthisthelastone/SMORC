@@ -33,6 +33,11 @@ export const OrcInShirt = new URL("./Orc-in-shirt.png", import.meta.url).href;
 export const SmorcWifFamily = new URL("./Smorc-wif-family.png", import.meta.url)
   .href;
 
+export const CountdownBackground = new URL(
+  "./Countdown-background-fin.png",
+  import.meta.url,
+).href;
+
 export const AirdropBackground = new URL(
   "./Airdrop-background.png",
   import.meta.url,

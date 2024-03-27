@@ -25,7 +25,7 @@ export const EffectsWrapper = styled(Flex)<EffectsWrapperProps>(
     background-image: url("${url}");
     background-size: cover;
     background-position: top;
-    background-repeat: no-repeat;
+    min-width: 100vw;
     min-height: 100vh;
     position: relative;
     ::-webkit-scrollbar-track {

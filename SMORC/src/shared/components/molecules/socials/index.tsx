@@ -64,8 +64,14 @@ export const HugeWhiteSocials = ({ className }: HugeWhiteProps) => (
   </Flex>
 );
 
-export const GreyTransparentSocials = () => (
-  <Flex className={"gap-5"}>
+interface GreyTransparentSocials {
+  className?: string;
+}
+
+export const GreyTransparentSocials = ({
+  className,
+}: GreyTransparentSocials) => (
+  <Flex className={`gap-5 ${className}`}>
     <TwitterLink>
       <SmallGreyTwitter />
     </TwitterLink>

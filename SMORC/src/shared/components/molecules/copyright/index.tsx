@@ -1,8 +1,11 @@
 import { Flex, Typography } from "@shared/components";
 
-export const Copyright = () => {
+export interface CopyrightProps {
+  className?: string;
+}
+export const Copyright = ({ className }: CopyrightProps) => {
   return (
-    <Flex>
+    <Flex className={className}>
       <Typography className={"text-[14px] font-[400]"}>
         Copyright 2024,
       </Typography>

@@ -27,7 +27,7 @@ export const IntroWithEconomics = () => {
 
 export const SmorcTheOrc = () => {
   return (
-    <Flex className={"pr-[6.5%] max-h-[75vh]"}>
+    <Flex className={"pr-[6.5%] max-h-[50vh]"}>
       <Box className="flex-1 gap-[10rem] pt-[2.5rem]" p={0}>
         <Flex className={"flex-col width-[25rem] gap-[1rem] pl-[1.5rem]"}>
           <Typography className={"text-[36px] font-[600]"}>
