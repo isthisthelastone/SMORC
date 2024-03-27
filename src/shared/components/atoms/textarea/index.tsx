@@ -25,4 +25,5 @@ const Area = styled.textarea<TextareaProps>(
     overflow: hidden;
     pointer-events: none;
   `,
+  ``,
 );

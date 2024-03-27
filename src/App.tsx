@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Countdown } from "./pages";
+import { Airdrop, Countdown, Home } from "./pages";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Countdown />}></Route>
-          {/*  <Route path="/airdrop" element={<Airdrop />}></Route> */}
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/airdrop" element={<Airdrop />}></Route>
           {/* <Route path="/countdown" element={<Countdown />} /> */}
         </Routes>
       </BrowserRouter>

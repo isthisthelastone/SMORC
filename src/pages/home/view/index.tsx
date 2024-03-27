@@ -6,13 +6,37 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { IntroWithEconomics } from "./intro-with-economics.tsx";
 import { StatsWithFooter } from "./stats-with-footer.tsx";
+import { useEffect, useState } from "react";
+import { HomeMobile } from "@pages/home/view/mobile.tsx";
 
 export const Home = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // 768px is a common breakpoint for mobile
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount and unmount
   return (
     <EffectsWrapper className={"flex-col px-[12.5%]"} url={HomeEffects}>
-      <HeaderWithWallet />
-      <IntroWithEconomics />
-      <StatsWithFooter />
+      {isMobile ? (
+        <HomeMobile />
+      ) : (
+        <>
+          <HeaderWithWallet />
+          <IntroWithEconomics />
+          <StatsWithFooter />
+        </>
+      )}
     </EffectsWrapper>
   );
 };

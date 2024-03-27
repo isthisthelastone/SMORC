@@ -22,6 +22,7 @@ import SmallGreyTwitter from "./icons/Small-grey-transparent-twitter.svg?react";
 import SmallGreyDiscord from "./icons/Small-grey-transparent-discord.svg?react";
 import SmallGreyTelegram from "./icons/Small-grey-telegram-icon.svg?react";
 import ScrollBack from "./icons/Scroll-back.svg?react";
+import SearchIcon from "./icons/Search-Icon.svg?react";
 
 export const HomeEffects = new URL("./Entire-effects.png", import.meta.url)
   .href;
@@ -31,6 +32,9 @@ export const OrcWifFamily = new URL("./Orc-wif-family.png", import.meta.url)
 export const OrcInShirt = new URL("./Orc-in-shirt.png", import.meta.url).href;
 
 export const SmorcWifFamily = new URL("./Smorc-wif-family.png", import.meta.url)
+  .href;
+
+export const OrcWifMoney = new URL("./Orc-money-spender.png", import.meta.url)
   .href;
 
 export const CountdownBackground = new URL(
@@ -66,4 +70,5 @@ export {
   SmallGreyTwitter,
   SmallGreyDiscord,
   ScrollBack,
+  SearchIcon,
 };
