@@ -9,9 +9,17 @@ import {
 } from "@shared/components/molecules";
 import { css } from "@emotion/react";
 import { Copyright } from "@shared/components/molecules/copyright";
-export const StatsWithFooter = () => {
+import { useUnit } from "effector-react";
+import { homeModel } from "../model";
+
+const { $userData } = homeModel;
+
+interface StatsWithFooterProps {
+  className?: string;
+}
+export const StatsWithFooter = ({ className }: StatsWithFooterProps) => {
   return (
-    <Flex className={"flex-col  gap-[2rem]"}>
+    <Flex className={`${className ?? ""} flex-col  gap-[2rem]`}>
       <PreSale />
       <ContributersTable />
       <HomeFooter />
@@ -97,7 +105,7 @@ export const ContributersTable = () => {
   );
 };
 
-interface UserData {
+export interface UserData {
   wallet: string;
   lamports: number;
   allAmount: number;
@@ -122,33 +130,11 @@ const calculateStringData = (number: number) => {
 };
 
 export const TopContributersTable = () => {
-  const [userData, setUserData] = useState<UserData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const userData = useUnit($userData);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch("https://api.smorc.io/all_transfers");
-      const data = await response.json();
-      const usersArray: UserData[] = Object.entries(data).map(
-        ([wallet, userInfo]) => ({
-          wallet,
-          //@ts-expect-error впадлу
-          ...userInfo,
-        }),
-      );
-      setUserData(usersArray);
-    } catch (error) {
-      console.error("Ошибка при получении данных:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  if (!userData) return null;
 
   const lastItemIndex = currentPage * ITEMS_PER_PAGE;
   const firstItemIndex = lastItemIndex - ITEMS_PER_PAGE;
@@ -240,7 +226,7 @@ interface HeaderTitleProps {
 }
 
 const HeaderTitle = ({ children }: HeaderTitleProps) => (
-  <Typography className="text-[20px] text-center font-[600]">
+  <Typography className="text-[20px]  pb-[1rem] text-center font-[600]">
     {children}
   </Typography>
 );
@@ -250,7 +236,7 @@ const TableRow = styled.tr`
 `;
 
 const RowContent = ({ children }: HeaderTitleProps) => (
-  <Typography className="font-[500]  text-[16px] text-center">
+  <Typography className="font-[500]   text-[16px] text-center">
     {children}
   </Typography>
 );

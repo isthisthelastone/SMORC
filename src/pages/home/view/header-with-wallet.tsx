@@ -23,7 +23,11 @@ export const HeaderWithWallet = () => {
   );
 };
 
-const WalletContract = () => {
+interface WalletContractProps {
+  mobile?: boolean;
+  className?: string;
+}
+export const WalletContract = ({ mobile, className }: WalletContractProps) => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleClick = () => {
@@ -35,16 +39,24 @@ const WalletContract = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <Flex className="gap-[10rem]">
-      <Flex className="z-10 w-[30rem] pt-[10rem] flex-col gap-[1rem] text-6xl font-extrabold ">
+    <Flex
+      className={`${className ?? ""} gap-[${mobile ? "2.5rem" : "10rem"}] ${mobile && "flex-col"}`}
+    >
+      <Flex
+        className={`z-10 w-[30rem] pt-[${mobile ? "2rem" : "10rem"}] flex-col gap-[1rem] text-6xl font-extrabold "`}
+      >
         <Typography>$SMORC</Typography>
-        <Typography>The strongest</Typography>
-        <Flex className="gap-[1rem]">
+        <Typography className={`${mobile && "text-center"}`}>
+          The strongest
+        </Typography>
+        <Flex
+          className={`${mobile && "text-center justify-center"} gap-[1rem]`}
+        >
           <Solana>Solana</Solana>
           <Typography>Orc</Typography>
         </Flex>
       </Flex>
-      <Flex className="flex-col pt-[3rem]">
+      <Flex className={`flex-col pt-[${mobile ? "0rem" : "3rem"}]`}>
         <img src={SmokingOrc} alt="Smoking Orc" />
         <Box className="w-[35rem] flex-col gap-[1rem] pb-[1.5rem]" p={1}>
           <Flex className={"justify-between"}>

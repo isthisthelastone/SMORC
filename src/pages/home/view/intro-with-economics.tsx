@@ -5,19 +5,23 @@ import {
   LiquidityPoolMiniDiagram,
   MarketingMiniDiagram,
   OrcInShirt,
+  OrcWifFamily,
   PresaleMiniDiagram,
   PurpleArc,
   SupplyIcon,
 } from "@shared/assets";
-import { Box, Flex, Typography } from "@shared/components";
+import { Box, Flex, Show, Typography } from "@shared/components";
 import { Solana, WhoIsSmorc } from "./header-with-wallet.tsx";
 
 import { ReactNode } from "react";
 import { Tooltip } from "@shared/components/molecules";
 
-export const IntroWithEconomics = () => {
+interface IntroWithEconomicsProps {
+  className?: string;
+}
+export const IntroWithEconomics = ({ className }: IntroWithEconomicsProps) => {
   return (
-    <Flex className={"flex-col"}>
+    <Flex className={`flex-col ${className ?? ""}`}>
       <WhoIsSmorc />
       <SmorcTheOrc />
       <SMORCenomics />
@@ -25,16 +29,29 @@ export const IntroWithEconomics = () => {
   );
 };
 
-export const SmorcTheOrc = () => {
+interface SmorcTheOrcProps {
+  mobile?: boolean;
+  className?: string;
+}
+export const SmorcTheOrc = ({ className, mobile }: SmorcTheOrcProps) => {
   return (
-    <Flex className={"pr-[6.5%] max-h-[50vh]"}>
-      <Box className="flex-1 gap-[10rem] pt-[2.5rem]" p={0}>
-        <Flex className={"flex-col width-[25rem] gap-[1rem] pl-[1.5rem]"}>
-          <Typography className={"text-[36px] font-[600]"}>
+    <Flex
+      className={` width-[100%] ${!mobile && "max-h-[50vh] pr-[6.5%]"} ${mobile && "flex-1"} ${className ?? ""}`}
+    >
+      <Box
+        className={`width-[100%] gap-[10rem] pt-[${mobile ? "1.5rem" : "2.5rem"}] ${mobile && "px-[1rem]"}`}
+        p={0}
+      >
+        <Flex
+          className={`flex-col width-[100%]  ${!mobile && "width-[25rem] pl-[1.5rem]"} gap-[1rem] `}
+        >
+          <Typography
+            className={`${mobile ? "font-[700] text-[1.75rem] text-center" : "text-[36px] font-[600]"}] width-[100%]`}
+          >
             SMORC, the ORC
           </Typography>
           <Typography
-            className={"text-[16px] font-[400] max-h-[50vh] overflow-hidden"}
+            className={`text-[${mobile ? "0.875rem" : "16px"}]  width-[100%] font-[400] max-h-[50vh] overflow-hidden`}
           >
             In the digital realm of Solana, there lived SMORC, a curious
             character unlike any other blockchain entity. One day, it stumbled
@@ -44,7 +61,7 @@ export const SmorcTheOrc = () => {
             blockchain.
           </Typography>
           <Typography
-            className={"text-[16px] font-[400] max-h-[50vh] overflow-hidden"}
+            className={`text-[${mobile ? "0.875rem" : "16px"}]  width-[100%] font-[400] max-h-[50vh] overflow-hidden`}
           >
             Excited by its discovery, SMORC shared it with the <b>Solana </b>
             community, sparking a frenzy of activity. Through collaboration and
@@ -53,8 +70,17 @@ export const SmorcTheOrc = () => {
             frontiers and uniting the blockchain community one discovery at a
             time.
           </Typography>
+          <Show when={mobile}>
+            <img
+              src={OrcWifFamily}
+              className={"scale-x-[-1]"}
+              alt="Orc wif family"
+            />
+          </Show>
         </Flex>
-        <img src={OrcInShirt} alt="Orc in Shirt" />
+        <Show when={!mobile}>
+          <img src={OrcInShirt} alt="Orc in Shirt" />
+        </Show>
       </Box>
     </Flex>
   );

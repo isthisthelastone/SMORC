@@ -23,6 +23,7 @@ import SmallGreyDiscord from "./icons/Small-grey-transparent-discord.svg?react";
 import SmallGreyTelegram from "./icons/Small-grey-telegram-icon.svg?react";
 import ScrollBack from "./icons/Scroll-back.svg?react";
 import SearchIcon from "./icons/Search-Icon.svg?react";
+import ShowMoreIcon from "./icons/ShowMoreIcon.svg?react";
 
 export const HomeEffects = new URL("./Entire-effects.png", import.meta.url)
   .href;
@@ -71,4 +72,5 @@ export {
   SmallGreyDiscord,
   ScrollBack,
   SearchIcon,
+  ShowMoreIcon,
 };
