@@ -13,11 +13,10 @@ import {
   AirdropBackground,
   OrcWifMoney,
   SearchIcon,
-  SmokingOrc,
   SolanaGrey,
 } from "@shared/assets";
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useUnit } from "effector-react";
 import { airdropModel } from "../model";
 import styled from "@emotion/styled";
@@ -46,7 +45,7 @@ const CheckAllocation = () => {
     walletDataRequested,
   ]);
 
-  const [displayMode, setDisplayMode] = useState<"search" | "data">("search");
+  // const [displayMode, setDisplayMode] = useState<"search" | "data">("search");
 
   const ref = useRef<HTMLInputElement>(null);
 

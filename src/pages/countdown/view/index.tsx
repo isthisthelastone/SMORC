@@ -29,11 +29,10 @@ export const Countdown = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
+  const wrapperStyles = `flex-col px-[${isMobile ? 5 : 12.5}%]  gap-[${isMobile ? 5 : 7.5}rem]`;
+
   return (
-    <EffectsWrapper
-      className={`flex-col px-[${isMobile ? 5 : 12.5}%]  gap-[${isMobile ? 5 : 7.5}rem]`}
-      url={CountdownBackground}
-    >
+    <EffectsWrapper className={wrapperStyles} url={CountdownBackground}>
       <Flex className="pt-[2rem] justify-center ">
         <Logo />
       </Flex>
