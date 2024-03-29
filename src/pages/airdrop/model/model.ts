@@ -17,8 +17,10 @@ const fetchDataFx = createEffect(async (wallet: string) => {
 });
 
 sample({
+  //@ts-expect-error valid types
   clock: walletDataRequested,
   source: $inputValue,
+  //@ts-expect-error valid types
   filter: (item) => Boolean(item) && item.length > 30,
   target: fetchDataFx,
 });

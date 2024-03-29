@@ -116,7 +116,7 @@ export interface UserData {
 
 const ITEMS_PER_PAGE = 10;
 
-const calculateStringData = (number: number) => {
+export const calculateStringData = (number: number) => {
   switch (number) {
     case 1:
       return "🥇 1";
@@ -225,17 +225,17 @@ interface HeaderTitleProps {
   children: ReactNode;
 }
 
-const HeaderTitle = ({ children }: HeaderTitleProps) => (
-  <Typography className="text-[20px]  pb-[1rem] text-center font-[600]">
+export const HeaderTitle = ({ children }: HeaderTitleProps) => (
+  <Typography className="text-[1rem] font-[500]  pb-[1rem] text-center ">
     {children}
   </Typography>
 );
 
-const TableRow = styled.tr`
+export const TableRow = styled.tr`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
-const RowContent = ({ children }: HeaderTitleProps) => (
+export const RowContent = ({ children }: HeaderTitleProps) => (
   <Typography className="font-[500]   text-[16px] text-center">
     {children}
   </Typography>
